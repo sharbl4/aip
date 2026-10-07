@@ -1,0 +1,537 @@
+**zadanie 1**
+
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("введи 1-е число:");
+        int a=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("введи 2-е число:");
+        int b=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("введи 3-е число:");
+        int c=Convert.ToInt32(Console.ReadLine());
+        if (a>=1 && a<=3)
+        {
+            Console.Write($"{a} ");
+        }
+        if (b>=1 && b<=3)
+        {
+            Console.Write($"{b} ");
+        }
+        if (c>=1 && c<=3)
+        {
+            Console.Write($"{c} ");
+        }
+    }
+}
+
+
+
+
+
+**zadanie 2**
+
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("введи 1-е число:");
+        int a=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("введи 2-е число:");
+        int b=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("введи 3-е число:");
+        int c=Convert.ToInt32(Console.ReadLine());
+        int min=a;
+        if (b<min)
+        {
+            min=b;
+        }
+        if (c<min)
+        {
+            min=c;
+        }
+        Console.WriteLine($"минимальное: {min}");
+    }
+}
+
+
+
+**zadanie 3**
+
+
+
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи номер года: ");
+        int year = Convert.ToInt32(Console.ReadLine());
+        bool isLeap;
+        if (year % 4 != 0)
+        {
+            isLeap = false;
+        }
+        else if (year % 100 != 0)
+        {
+            isLeap = true;2
+        }
+        else if (year % 400 != 0)
+        {
+            isLeap = false;
+        }
+        else
+        {
+            isLeap = true;
+        } 
+        int days;
+        if (isLeap)
+            days = 366;
+        else
+            days = 365;
+        Console.WriteLine($"год {year} содержит {days} дней.");
+    }
+}
+
+
+**задание 4**
+
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи сумму покупки:");
+        double pok=Convert.ToDouble(Console.ReadLine());
+        double dis;
+        if (pok>500.0)
+        {
+            dis=0.03;
+        }
+        else if (pok>1000.0)
+        {
+            dis=0.05;
+        }
+        else
+        {
+            dis=0;
+        }
+        double total=pok-pok*dis;
+        Console.Write($"тотал: {total}");
+    }
+}
+
+
+
+
+** zadanie 5**
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи номер месяца (1-12): ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        string month;
+        if (n == 1) month = "январь";
+        else if (n == 2) month = "февраль";
+        else if (n == 3) month = "март";
+        else if (n == 4) month = "апрель";
+        else if (n == 5) month = "май";
+        else if (n == 6) month = "июнь";
+        else if (n == 7) month = "июль";
+        else if (n == 8) month = "август";
+        else if (n == 9) month = "сентябрь";
+        else if (n == 10) month = "октябрь";
+        else if (n == 11) month = "ноябрь";
+        else if (n == 12) month = "декабрь";
+        else month = "эээээ введи нормально";
+        Console.WriteLine(month);
+    }
+}
+
+
+**zadanie 6**
+
+
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи первое число: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+        Console.Write("введи второе число: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+        Console.Write("введи третье число: ");
+        int c = Convert.ToInt32(Console.ReadLine());
+        int count = 0;
+        if (a > 0)
+            count++;
+        if (b > 0)
+            count++;
+        if (c > 0)
+            count++;
+        Console.WriteLine($"количество + чисел: {count}");
+    }
+}
+
+
+
+**zadanie 7**
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+class Program
+{
+    static void Main()
+    {
+
+Console.Write("введи x: ");
+double x = Convert.ToDouble(Console.ReadLine());
+Console.Write("введи y: ");
+double y = Convert.ToDouble(Console.ReadLine());
+    if (x == 0 && y == 0)
+Console.WriteLine("точка находится в начале координат");
+    else if (x == 0)
+Console.WriteLine("точка находится на оси OY");
+    else if (y == 0)
+Console.WriteLine("точка находится на оси OX");
+    else if (x > 0 && y > 0)
+Console.WriteLine("точка находится в 1 четверти");
+    else if (x < 0 && y > 0)
+Console.WriteLine("точка находится во 2 четверти");
+    else if (x < 0 && y < 0)
+Console.WriteLine("точка находится в 3 четверти");
+    else
+Console.WriteLine("точка находится в 4 четверти");
+    }
+}
+
+
+**zadanie 8**
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи цифру 0-9: ");
+        int d = Convert.ToInt32(Console.ReadLine());
+        string name;
+        if (d == 0) name = "ноль";
+        else if (d == 1) name = "один";
+        else if (d == 2) name = "два";
+        else if (d == 3) name = "три";
+        else if (d == 4) name = "четыре";
+        else if (d == 5) name = "пять";
+        else if (d == 6) name = "шесть";
+        else if (d == 7) name = "семь";
+        else if (d == 8) name = "восемь";
+        else if (d == 9) name = "девять";
+        else name = "ээээээ введи нормально";
+        Console.WriteLine(name);
+    }
+}
+
+
+**zadanie 9**
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи число месяца k: ");
+        int k = int.Parse(Console.ReadLine());
+        int index = (k - 1) % 7;
+        string day;
+        if (index == 0)
+            day = "понедельник";
+        else if (index == 1)
+            day = "вторник";
+        else if (index == 2)
+            day = "среда";
+        else if (index == 3)
+            day = "четверг";
+        else if (index == 4)
+            day = "пятница";
+        else if (index == 5)
+            day = "суббота";
+        else
+            day = "воскресенье";
+        Console.WriteLine($"{k}-е число — это {day}");
+    }
+}
+
+**задлание 10**
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи номер фигуры N (1-4): ");
+        int N = int.Parse(Console.ReadLine());
+        if (N == 1)
+        {
+            Console.Write("введи радиус круга: ");
+            double R = double.Parse(Console.ReadLine());
+            double area = Math.PI * R * R;
+            Console.WriteLine($"площадь круга: {area}");
+        }
+        else if (N == 2)
+        {
+            Console.Write("введи радиус шара: ");
+            double R = double.Parse(Console.ReadLine());
+            double volume = 4.0 / 3 * Math.PI * Math.Pow(R, 3);
+            Console.WriteLine($"объём шара: {volume}");
+        }
+        else if (N == 3)
+        {
+            Console.Write("введи радиус цилиндра: ");
+            double R = double.Parse(Console.ReadLine());
+            Console.Write("введи высоту цилиндра: ");
+            double h = double.Parse(Console.ReadLine());
+            double volume = Math.PI * R * R * h;
+            Console.WriteLine($"объём цилиндра: {volume}");
+        }
+        else if (N == 4)
+        {
+            Console.Write("введи радиус сферы: ");
+            double r = double.Parse(Console.ReadLine());
+            double surface = 4 * Math.PI * r * r;
+            Console.WriteLine($"площадь поверхности сферы: {surface}");
+        }
+        else
+        {
+            Console.WriteLine("некорректный номер фигуры");
+        }
+    }
+}
+
+
+**задние 11**
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи номер фигуры N (1-3): ");
+        int N = int.Parse(Console.ReadLine());
+        double area;
+        if (N == 1)
+        {
+            Console.Write("введи сторону a: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("введи сторону b: ");
+            double b = double.Parse(Console.ReadLine());
+            area = a * b;
+            Console.WriteLine($"площадь прямоугольника: {area}");
+        }
+        else if (N == 2)
+        {
+            Console.Write("введи основание a: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("введи высоту h: ");
+            double h = double.Parse(Console.ReadLine());
+            area = a * h;
+            Console.WriteLine($"площадь параллелограмма: {area}");
+        }
+        else if (N == 3)
+        {
+            Console.Write("введи основание a: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("введи основание b: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.Write("введи высоту h: ");
+            double h = double.Parse(Console.ReadLine());
+            area = 0.5 * (a + b) * h;
+            Console.WriteLine($"площадь трапеции: {area}");
+        }
+        else
+        {
+            Console.WriteLine("некорректный номер фигуры");
+        }
+    }
+}
+
+
+**задание 12**
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи целое число: ");
+        int n = int.Parse(Console.ReadLine());
+        // приводим остаток к диапазону 0..4 даже для отрицательных n
+        int rem = ((n % 5) + 5) % 5;
+        string remWord;
+        if (rem == 0)
+            remWord = "ноль";
+        else if (rem == 1)
+            remWord = "один";
+        else if (rem == 2)
+            remWord = "два";
+        else if (rem == 3)
+            remWord = "три";
+        else
+            remWord = "четыре";
+        Console.WriteLine($"остаток от деления {n} на 5: {remWord}");
+    }
+}
+
+**задание 13**
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double expr1 = 2 * Math.Pow(10 + Math.Pow(10, 1.0 / 10), 1.0 / 10) + 2 * Math.Pow(10, -3);
+        double expr2 = Math.PI / 12 + Math.Asin(Math.Sqrt(3) / 2);
+        double func;
+        if (1 / expr1 > expr2)
+        {
+            func = Math.Acos((expr1 - expr2) / (1 + expr1 * Math.Sin(expr2)));
+        }
+        else
+        {
+            func = Math.Sin(expr2) / (expr1 * Math.Sqrt(expr1)) + Math.Exp(Math.Pow(expr1, 2) - 1);
+        }
+        Console.WriteLine($"expr1 = {expr1}");
+        Console.WriteLine($"expr2 = {expr2}");
+        Console.WriteLine($"func = {func}");
+    }
+}
+
+
+**задание 14**
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double p = Math.Exp(Math.Pow(Math.Sin(2.0 / 3), 3)) + Math.Log(Math.Atan(2.0 / 3));
+        double q =
+            7.5 * Math.Pow(Math.Pow(2.8, 1.0 / 3), -8)
+            - Math.Log10(Math.Pow(1.6, Math.Pow(1.2, 1.0 / 3)));
+        double u,
+            f;
+        if (Math.Pow(p, 2) > q)
+        {
+            u = Math.Pow(Math.Pow(p, 2) - q, 1.0 / 5);
+            f = Math.Sin(Math.Pow(p, 2));
+        }
+        else
+        {
+            u = 2 * Math.Asin(Math.Pow(p, 2) / q);
+            f = Math.Sin(q);
+        }
+        Console.WriteLine($"p = {p}");
+        Console.WriteLine($"q = {q}");
+        Console.WriteLine($"u = {u}");
+        Console.WriteLine($"f = {f}");
+    }
+}
+
+
+**задание 15**
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Введите x: ");
+        double x = double.Parse(Console.ReadLine());
+        Console.Write("Введите y: ");
+        double y = double.Parse(Console.ReadLine());
+        Console.Write("Введите z: ");
+        double z = double.Parse(Console.ReadLine());
+        double u =
+            Math.Cos(Math.Abs(x + Math.Pow(Math.Abs(y), 1.0 / 3)))
+            + Math.Sin(z - Math.Pow(x, 10) / (1 + Math.Pow(y, 2) + Math.Pow(z, 2)));
+        double v = Math.Exp(-Math.Pow(x, 2)) + Math.Pow(Math.Abs(x + y + z), 1.0 / 7) + Math.Exp(y);
+        double t;
+        if (Math.Pow(u, 2) + Math.Pow(v, 2) >= 5)
+        {
+            t = Math.Log(v, 2) + Math.Pow(u, 2) + Math.Pow(5, 1.0 / 5);
+        }
+        else
+        {
+            t = Math.Log(v) + Math.Pow(u, 2.0 / 3) + Math.Sin(Math.Sqrt(5));
+        }
+
+        Console.WriteLine($"u = {u}");
+        Console.WriteLine($"v = {v}");
+        Console.WriteLine($"t = {t}");
+    }
+}
+
+
+**задание 16**
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("введи x: ");
+        double x = double.Parse(Console.ReadLine());
+        Console.Write("введи y: ");
+        double y = double.Parse(Console.ReadLine());
+
+        double f;
+        if (Math.Abs(x) >= Math.Abs(y))
+        {
+            f = Math.Log(Math.Abs(x + y)) / (Math.Log(Math.Abs(x)) + Math.Log(Math.Abs(y)))
+                - Math.Sin(Math.Pow(Math.Pow(x, 8) + Math.Pow(y, 4), 1.0 / 5));
+        }
+        else
+        {
+            f = Math.Asin(Math.Abs(x) / Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2)))
+                + Math.Exp(Math.Cos(Math.Sqrt(Math.Abs(x + y))));
+        }
+
+        double pow8sum = Math.Pow(x, 8) + Math.Pow(y, 8);
+        double u;
+        if (pow8sum >= 12)
+        {
+            u = Math.Sin(Math.Abs(x - y / pow8sum));
+        }
+        else
+        {
+            u = Math.Cos(Math.Abs(x - y / pow8sum));
+        }
+
+        Console.WriteLine($"f = {f}");
+        Console.WriteLine($"u = {u}");
+    }
+}
