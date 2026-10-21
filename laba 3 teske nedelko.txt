@@ -1,0 +1,386 @@
+**zadanie 1**
+using System;
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введи цену конфет через запятую, иначе каюк");
+        double price=double.Parse(Console.ReadLine());
+        for(int i=1; i <= 10; i++)
+        {
+            Console.WriteLine($"{i} кг конфет стоит {price*i:F2} рублей");
+        }
+    }
+}
+
+
+**zadanie 2**
+
+using System;
+class Program
+{
+    static void Main()
+    {
+    Console.WriteLine("введи а");
+    int a=int.Parse(Console.ReadLine());
+    Console.WriteLine("введи b");
+    int b=int.Parse(Console.ReadLine());
+    long sum=0;
+    int count=0;
+    for(int i=a; i<=b; i++)
+        {
+            sum+=i;
+            count++;
+        }
+    double avg=(double)sum/count;
+    Console.WriteLine($"sum={sum}     count={count}");
+    Console.WriteLine($"avg {avg}");
+    }
+}
+
+
+
+
+**zadanie 3**
+
+using System;
+using System.ComponentModel.Design.Serialization;
+class Program
+{
+    static void Main()
+    {
+    const int n=20;
+    double sum=0;
+    for (int i=0; i<=n; i++)
+        {
+            Console.WriteLine("vvedi tsenu");
+            double cost=double.Parse(Console.ReadLine());
+            sum+=cost;
+        }
+    Console.WriteLine($"средняя стоимость:{sum/n:F2}");
+    }
+}
+
+
+**zadanie 4**
+
+
+
+using System;
+using System.ComponentModel.Design.Serialization;
+
+class Program
+{
+    static void Main()
+    {
+        int amyoba = 1;
+        for (int i = 0; i <= 24; i += 3)
+        {
+            Console.WriteLine($"колличество амёб через {i} часов: {amyoba}");
+            amyoba *= 2;
+        }
+    }
+}
+
+
+**zadanie 5**
+
+
+using System;
+
+namespace lyzhnik
+{
+    class Program
+    {
+        static void Main()
+        {
+            double r = 10;
+            double s = 10;
+            Console.WriteLine("а) пробег по дням:");
+            for (int d = 2; d <= 10; d++)
+            {
+                r = r * 1.1;
+                Console.WriteLine("день {0}: {1:F2} км", d, r);
+                if (d <= 7)
+                {
+                    s = s + r;
+                }
+            }
+            Console.WriteLine("б) суммарный путь за первые 7 дней: {0:F2} км", s);
+        }
+    }
+}
+
+**zadanie 6**
+
+using System;
+namespace posled
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите количество чисел n:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            long s = 0;
+            int p = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine("введите число " + i + ":");
+                int x = Convert.ToInt32(Console.ReadLine());
+                s = s + x;
+                if (x > 0)
+                {
+                    p++;
+                }
+            }
+            Console.WriteLine("а) сумма чисел = " + s);
+            Console.WriteLine("б) положительных чисел = " + p);
+        }
+    }
+}
+
+
+**zadanie 7**
+
+using System;
+namespace summa
+{
+    class Program
+    {
+        static void Main()
+        {
+            double x = 0;
+            for (int i = 1; i <= 10; i++)
+            {
+                x = x + 1.0 / i;
+            }
+            Console.WriteLine("x = 1 + 1/2 + ... + 1/10 = {0:F6}", x);
+        }
+    }
+}
+
+**zadanie 8**
+
+using System;
+
+namespace proizv
+{
+    class Program
+    {
+        static void Main()
+        {
+            long z = 1;
+            for (int i = 2; i <= 20; i += 2)
+            {
+                z = z * i;
+            }
+            Console.WriteLine("z = 2 * 4 * 6 * ... * 20 = " + z);
+        }
+    }
+}
+
+
+**zadanie9**
+
+using System;
+namespace znaki
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("дроби вводите через запятую!");
+            Console.WriteLine("введите x:");
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = 0;
+            int z = -1;
+            for (int i = 1; i <= 9; i++)
+            {
+                y = y + z * i * i * x;
+                z = -z;
+            }
+            Console.WriteLine("y = " + y);
+        }
+    }
+}
+
+*zadanie 10*
+
+
+using System;
+
+namespace drobi
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("дроби вводите через запятую!");
+            Console.WriteLine("введите x:");
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = 0;
+            for (int d = 1; d <= 17; d += 2)
+            {
+                y = y + x / d;
+            }
+            Console.WriteLine("y = {0:F6}", y);
+        }
+    }
+}
+
+
+**zadanie 11**
+
+
+using System;
+namespace faktorial
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите n (от 0 до 20):");
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (n < 0 || n > 20)
+            {
+                Console.WriteLine("n должно быть от 0 до 20");
+            }
+            else
+            {
+                long f = 1;
+                for (int i = 2; i <= n; i++)
+                {
+                    f = f * i;
+                }
+                Console.WriteLine(n + "! = " + f);
+            }
+        }
+    }
+}
+
+
+**zadanie 12**
+
+using System;
+
+namespace stepeni
+{
+    class Program
+    {
+        static void Main()
+        {
+            long y = 0;
+            long t = 1;
+            for (int k = 0; k <= 10; k++)
+            {
+                y = y + t;
+                t = t * -3;
+            }
+            Console.WriteLine("y = 1 - 3 + 9 - 27 + ... + 3^10 = " + y);
+        }
+    }
+}
+
+
+**zadanie 13**
+
+using System;
+namespace sosedi
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("дроби вводите через запятую!");
+            Console.WriteLine("введите количество чисел n:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int k = 0;
+            double prev = 0;
+            double cur = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                double next;
+                do
+                {
+                    Console.WriteLine("введите число " + i + ":");
+                    next = Convert.ToDouble(Console.ReadLine());
+                }
+                while (next < 0);
+                if (i >= 3 && cur > prev && cur > next)
+                {
+                    k++;
+                }
+                prev = cur;
+                cur = next;
+            }
+            Console.WriteLine("чисел, больших обоих соседей: " + k);
+        }
+    }
+}
+
+
+**zadanie 14**
+
+using System;
+namespace znak
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите количество чисел n:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int k = 0;
+            int prev = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                int x;
+                do
+                {
+                    Console.WriteLine("введите число " + i + ":");
+                    x = Convert.ToInt32(Console.ReadLine());
+                }
+                while (x == 0);
+                if (i > 1 && (x > 0) != (prev > 0))
+                {
+                    k++;
+                }
+                prev = x;
+            }
+            Console.WriteLine("количество смен знака: " + k);
+        }
+    }
+}
+
+
+**zadanie 15**
+
+using System;
+namespace sovershenoe
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите натуральное число:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int s = 0;
+            for (int d = 1; d <= n / 2; d++)
+            {
+                if (n % d == 0)
+                {
+                    s = s + d;
+                }
+            }
+            if (n > 0 && s == n)
+            {
+                Console.WriteLine(n + " - совершенное число");
+            }
+            else
+            {
+                Console.WriteLine(n + " - не совершенное число (сумма делителей = " + s + ")");
+            }
+        }
+    }
+}
