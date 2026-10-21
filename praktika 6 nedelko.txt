@@ -1,0 +1,54 @@
+using System;
+
+namespace zele
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("вводите действия по одному в строке, пустая строка - конец ввода:");
+            string[] sl = new string[100];
+            int n = 0;
+            string line = Console.ReadLine();
+            while (line != null && line.Trim() != "")
+            {
+                string[] w = line.Split(' ');
+                string res = "";
+                for (int i = 1; i < w.Length; i++)
+                {
+                    if (w[i] != "")
+                    {
+                        if (w[i][0] >= '0' && w[i][0] <= '9')
+                        {
+                            int num = Convert.ToInt32(w[i]);
+                            res = res + sl[num - 1];
+                        }
+                        else
+                        {
+                            res = res + w[i];
+                        }
+                    }
+                }
+                switch (w[0])
+                {
+                    case "MIX":
+                        sl[n] = "MX" + res + "XM";
+                        break;
+                    case "WATER":
+                        sl[n] = "WT" + res + "TW";
+                        break;
+                    case "DUST":
+                        sl[n] = "DT" + res + "TD";
+                        break;
+                    case "FIRE":
+                        sl[n] = "FR" + res + "RF";
+                        break;
+                }
+                n++;
+                line = Console.ReadLine();
+            }
+            Console.WriteLine("заклинание:");
+            Console.WriteLine(sl[n - 1]);
+        }
+    }
+}

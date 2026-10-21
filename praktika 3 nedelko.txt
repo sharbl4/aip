@@ -1,0 +1,45 @@
+using System;
+
+namespace razvedka
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите количество солдат n:");
+            long n = Convert.ToInt64(Console.ReadLine());
+            long a = n;
+            long ca = 1;
+            long cb = 0;
+            while (a > 3)
+            {
+                long lo = a / 2;
+                long clo;
+                long chi;
+                if (a % 2 == 0)
+                {
+                    clo = 2 * ca + cb;
+                    chi = cb;
+                }
+                else
+                {
+                    clo = ca;
+                    chi = ca + 2 * cb;
+                }
+                a = lo;
+                ca = clo;
+                cb = chi;
+            }
+            long r = 0;
+            if (a == 3)
+            {
+                r = ca;
+            }
+            if (a == 2)
+            {
+                r = cb;
+            }
+            Console.WriteLine("количество групп: " + r);
+        }
+    }
+}

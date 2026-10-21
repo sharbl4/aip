@@ -1,0 +1,54 @@
+using System;
+
+namespace fokus
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите количество действий n:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            long a = 1;
+            long b = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine("введите действие " + i + " (знак и число или x через пробел):");
+                string[] w = Console.ReadLine().Split(' ');
+
+                if (w[0] == "+")
+                {
+                    if (w[1] == "x")
+                    {
+                        a = a + 1;
+                    }
+                    else
+                    {
+                        b = b + Convert.ToInt64(w[1]);
+                    }
+                }
+                else if (w[0] == "-")
+                {
+                    if (w[1] == "x")
+                    {
+                        a = a - 1;
+                    }
+                    else
+                    {
+                        b = b - Convert.ToInt64(w[1]);
+                    }
+                }
+                else
+                {
+                    long m = Convert.ToInt64(w[1]);
+                    a = a * m;
+                    b = b * m;
+                }
+            }
+            Console.WriteLine("введите результат r:");
+            long r = Convert.ToInt64(Console.ReadLine());
+            long x = (r - b) / a;
+            Console.WriteLine("задуманное число: " + x);
+            Console.ReadKey(true);
+        }
+    }
+}

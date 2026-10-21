@@ -1,0 +1,70 @@
+using System;
+
+namespace dom
+{
+    class Program
+    {
+        static int p,
+            l,
+            c1,
+            c2,
+            c3,
+            c4,
+            c5,
+            c6;
+
+        static int cena(int r, int u)
+        {
+            int d = l - r;
+            int res = r * c1 + d * c2 + u * c3 + (d - u) * c6 + (p - r - u) * (c4 + c5);
+            return res;
+        }
+
+        static void Main()
+        {
+            Console.WriteLine("введите x:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("введите y:");
+            int y = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("введите l:");
+            l = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("введите c1:");
+            c1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("введите c2:");
+            c2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("введите c3:");
+            c3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("введите c4:");
+            c4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("введите c5:");
+            c5 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("введите c6:");
+            c6 = Convert.ToInt32(Console.ReadLine());
+            p = 2 * (x + y);
+            int rmax = Math.Max(x, y);
+            if (l < rmax)
+            {
+                rmax = l;
+            }
+            int min = 1000000000;
+            for (int r = 0; r <= rmax; r++)
+            {
+                int umax = l - r;
+                if (p - r < umax)
+                {
+                    umax = p - r;
+                }
+                for (int u = 0; u <= umax; u++)
+                {
+                    int now = cena(r, u);
+                    if (now < min)
+                    {
+                        min = now;
+                    }
+                }
+            }
+
+            Console.WriteLine("минимальная сумма: " + min);
+        }
+    }
+}
