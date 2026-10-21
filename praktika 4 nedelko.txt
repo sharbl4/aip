@@ -1,0 +1,27 @@
+using System;
+
+namespace chert
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите maxn:");
+            long maxn = Convert.ToInt64(Console.ReadLine());
+            long[] st = new long[32];
+            st[0] = 1;
+            for (int i = 1; i < st.Length; i++)
+            {
+                st[i] = st[i - 1] * 2;
+            }
+            long r = 0;
+            int z = 1;
+            while (st[z] - 1 <= maxn)
+            {
+                r = r + maxn / (st[z] - 1);
+                z++;
+            }
+            Console.WriteLine("количество комбинаций: " + r);
+        }
+    }
+}

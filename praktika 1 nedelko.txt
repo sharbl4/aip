@@ -1,0 +1,21 @@
+using System;
+namespace gryadki
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите количество грядок n:");
+            long n = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine("введите длину грядки l:");
+            long l = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine("введите ширину грядки w:");
+            long w = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine("введите расстояние до колодца k:");
+            long k = Convert.ToInt64(Console.ReadLine());
+            long a = 2 * k + 2 * l + 2 * w;
+            long r = n * a + w * n * (n - 1);
+            Console.WriteLine("наименьшее расстояние: ");
+        }
+    }
+}
