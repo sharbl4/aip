@@ -1,0 +1,414 @@
+**zadanie 1**
+
+using System;
+namespace posled
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("вводите числа, ноль - конец последовательности:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            long s = 0;
+            int k = 0;
+            while (x != 0)
+            {
+                int m = Math.Abs(x);
+                int sd = 0;
+                bool dva = false;
+                while (m > 0)
+                {
+                    sd = sd + m % 10;
+                    if (m % 10 == 2)
+                    {
+                        dva = true;
+                    }
+                    m = m / 10;
+                }
+                bool pr = sd >= 2;
+                for (int d = 2; d * d <= sd; d++)
+                {
+                    if (sd % d == 0)
+                    {
+                        pr = false;
+                    }
+                }
+                if (pr)
+                {
+                    s = s + x;
+                }
+                if (x > 0 && dva)
+                {
+                    k++;
+                }
+                x = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("а) сумма чисел, у которых сумма цифр простая: " + s);
+            Console.WriteLine("б) положительных чисел с цифрой 2: " + k);
+        }
+    }
+}
+
+
+**zadanie 2**
+
+using System;
+namespace proizvcifr
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите натуральное число:");
+            long n = Convert.ToInt64(Console.ReadLine());
+            long p = 1;
+            while (n > 0)
+            {
+                p = p * (n % 10);
+                n = n / 10;
+            }
+            Console.WriteLine("произведение цифр = " + p);
+        }
+    }
+}
+
+
+**zadanie 3**
+
+using System;
+namespace otricat
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("вводите числа, ноль - конец последовательности:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int i = 1;
+            int nom = 0;
+            int best = 0;
+            while (x != 0)
+            {
+                if (x < 0)
+                {
+                    int m = -x;
+                    int k = 0;
+                    while (m > 0)
+                    {
+                        if (m % 2 == 1)
+                        {
+                            k++;
+                        }
+                        m = m / 10;
+                    }
+                    if (k % 2 == 0 && (nom == 0 || x > best))
+                    {
+                        best = x;
+                        nom = i;
+                    }
+                }
+                i++;
+                x = Convert.ToInt32(Console.ReadLine());
+            }
+            if (nom == 0)
+            {
+                Console.WriteLine("таких чисел нет");
+            }
+            else
+            {
+                Console.WriteLine("номер = " + nom + ", число = " + best);
+            }
+        }
+    }
+}
+
+
+**zadanie 4**
+
+using System;
+namespace sosedi
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("дроби вводите через запятую!");
+            Console.WriteLine("вводите неотрицательные числа, отрицательное - конец ряда:");
+            double next = Convert.ToDouble(Console.ReadLine());
+            double prev = 0;
+            double cur = 0;
+            int i = 0;
+            int k = 0;
+            while (next >= 0)
+            {
+                i++;
+                if (i >= 3 && cur > prev && cur > next)
+                {
+                    k++;
+                }
+                prev = cur;
+                cur = next;
+                next = Convert.ToDouble(Console.ReadLine());
+            }
+            Console.WriteLine("чисел, больших обоих соседей: " + k);
+        }
+    }
+}
+
+
+**zadanie 5**
+
+using System;
+namespace cifry
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите число n (n > 0):");
+            long n = Convert.ToInt64(Console.ReadLine());
+            int k = 0;
+            long s = 0;
+            while (n > 0)
+            {
+                s = s + n % 10;
+                k++;
+                n = n / 10;
+            }
+            Console.WriteLine("количество цифр = " + k);
+            Console.WriteLine("сумма цифр = " + s);
+        }
+    }
+}
+
+
+**zadanie 6**
+
+using System;
+namespace eksponenta
+{
+    class Program
+    {
+        static void Main()
+        {
+            const double eps = 0.00001;
+            Console.WriteLine("дроби вводите через запятую!");
+            Console.WriteLine("введите x:");
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = 1;
+            double t = 1;
+            int k = 1;
+            while (Math.Abs(t) >= eps)
+            {
+                t = t * x / k;
+                y = y + t;
+                k++;
+            }
+            Console.WriteLine("ряд: y = {0:F6}", y);
+            Console.WriteLine("exp(x) = {0:F6}", Math.Exp(x));
+        }
+    }
+}
+
+
+**zadanie 7**
+
+using System;
+namespace sinus
+{
+    class Program
+    {
+        static void Main()
+        {
+            const double eps = 0.00001;
+            Console.WriteLine("дроби вводите через запятую!");
+            Console.WriteLine("введите x:");
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = x;
+            double t = x;
+            int k = 1;
+            while (Math.Abs(t) >= eps)
+            {
+                t = -t * x * x / ((2 * k) * (2 * k + 1));
+                y = y + t;
+                k++;
+            }
+            Console.WriteLine("ряд: y = {0:F6}", y);
+            Console.WriteLine("sin(x) = {0:F6}", Math.Sin(x));
+        }
+    }
+}
+
+
+**zadanie 8**
+
+using System;
+namespace kosinus
+{
+    class Program
+    {
+        static void Main()
+        {
+            const double eps = 0.0001;
+            Console.WriteLine("дроби вводите через запятую!");
+            Console.WriteLine("введите x:");
+            double x = Convert.ToDouble(Console.ReadLine());
+            double y = 1;
+            double t = 1;
+            int k = 1;
+            while (Math.Abs(t) >= eps)
+            {
+                t = -t * x * x / ((2 * k - 1) * (2 * k));
+                y = y + t;
+                k++;
+            }
+            Console.WriteLine("ряд: y = {0:F6}", y);
+            Console.WriteLine("cos(x) = {0:F6}", Math.Cos(x));
+        }
+    }
+}
+
+
+**zadanie 9**
+
+using System;
+namespace proizvcifr
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите натуральное число:");
+            long n = Convert.ToInt64(Console.ReadLine());
+            long p = 1;
+            while (n > 0)
+            {
+                p = p * (n % 10);
+                n = n / 10;
+            }
+            Console.WriteLine("произведение цифр = " + p);
+        }
+    }
+}
+
+
+**zadanie 10**
+
+using System;
+namespace naibolshee
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("вводите числа, ноль - конец последовательности:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int i = 1;
+            int nom = 0;
+            int best = 0;
+            while (x != 0)
+            {
+                if (x < 0 && (nom == 0 || x > best))
+                {
+                    best = x;
+                    nom = i;
+                }
+                i++;
+                x = Convert.ToInt32(Console.ReadLine());
+            }
+            if (nom == 0)
+            {
+                Console.WriteLine("отрицательных чисел нет");
+            }
+            else
+            {
+                Console.WriteLine("номер = " + nom + ", число = " + best);
+            }
+        }
+    }
+}
+
+
+**zadanie 11**
+
+using System;
+namespace znak
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("вводите ненулевые числа, ноль - конец последовательности:");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int prev = x;
+            int k = 0;
+            while (x != 0)
+            {
+                if ((x > 0) != (prev > 0))
+                {
+                    k++;
+                }
+                prev = x;
+                x = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("количество смен знака: " + k);
+        }
+    }
+}
+
+
+**zadanie 12**
+
+using System;
+namespace fibonachchi
+{
+    class Program
+    {
+        static void Main()
+        {
+            int a = 1;
+            int b = 1;
+            int s = 2;
+            int c = a + b;
+            while (c <= 1000)
+            {
+                s = s + c;
+                a = b;
+                b = c;
+                c = a + b;
+            }
+            Console.WriteLine("сумма чисел фибоначчи, не больших 1000: " + s);
+        }
+    }
+}
+
+
+**zadanie 13**
+
+using System;
+namespace palindrom
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("введите натуральное число:");
+            long n = Convert.ToInt64(Console.ReadLine());
+            long m = n;
+            long r = 0;
+            while (m > 0)
+            {
+                r = r * 10 + m % 10;
+                m = m / 10;
+            }
+            if (r == n)
+            {
+                Console.WriteLine(n + " - палиндром");
+            }
+            else
+            {
+                Console.WriteLine(n + " - не палиндром");
+            }
+        }
+    }
+}
